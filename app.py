@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.image(r'C:\Users\T125029\Desktop\streamlit-app\img\symbol011.png',width=100) 
+st.image(r'img\symbol011.png',width=100) 
 
 st.markdown("### 高校生のスマートフォンによるインターネット利用時間（平日）［都道府県別］令和６年度")
 
