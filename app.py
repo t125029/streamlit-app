@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.express as px
 
 st.image(r'C:\Users\T125029\Desktop\streamlit-app\img\symbol011.png',width=100) 
