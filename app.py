@@ -1,11 +1,10 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 
 st.image(r'C:\Users\T125029\Desktop\streamlit-app\img\symbol011.png',
          width=100) 
 
-st.markdown("### 高校生のスマートフォンによるインターネット利用時間（平日）［都道府県別］令和６年度")
+st.markdown("### 高校生のスマートフォンによるインターネット利用時間ごとの人数（平日）［都道府県別］令和６年度")
 
 st.info('このアプリの使い方：左のサイドバーで条件を選んでください')
 
@@ -31,19 +30,11 @@ if prefectures:
 else:
     df = df
 
-col = ['都道府県', item] if item in df.columns else df.columns
+st.dataframe(df, width=600, height=200)
 
-st.dataframe(df[col], width=600, height=200)
-
-unit = '人'
-x_label = '都道府県'
-y_label = f'{item}（{unit}）'
-
-chart_df = df[['都道府県', item]].copy()
+chart_df = df[['都道府県', item]].set_index('都道府県')
 
 if chart_type == '棒グラフ':
-    fig = px.bar(chart_df, x='都道府県', y=item, labels={'都道府県': x_label, item: y_label})
+    st.bar_chart(chart_df)
 else:
-    fig = px.scatter(chart_df, x='都道府県', y=item, labels={'都道府県': x_label, item: y_label})
-
-st.plotly_chart(fig)
+    st.scatter_chart(chart_df)
