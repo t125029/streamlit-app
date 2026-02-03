@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.image(r'C:\Users\T125029\Desktop\streamlit-app\img\symbol011.png',
+st.image(r'img\symbol011.png',
          width=100) 
 
 st.markdown("### 高校生のスマートフォンによるインターネット利用時間ごとの人数（平日）［都道府県別］令和６年度")
